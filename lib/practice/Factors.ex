@@ -1,19 +1,20 @@
 defmodule Practice.Factor do
 
-  def factor(x) do
-    primeCheck(x, 2)
+  def is-prime(x) do
+    is-prime (x, 2, [])
   end
 
-  def primeCheck(number, counter) do
+  def is-prime(x, i, acc) do
     cond do
-      number == 1 ->
-        false
-      counter == number ->
-        true
-      rem(number, counter) == 0 ->
-        primeCheck(div(number, counter), 2)
-      true ->
-        primeCheck(number, counter + 1)
+      div(x,i) == 1 ->
+        acc
+      x == i ->
+        acc
+      rem(x, i) == 0 ->
+        is-prime((div(x,i), 2, [i | acc])
+      rem(x, i) != 0 ->
+        is-prime(x, i + 1, acc)
     end
+
   end
 end
