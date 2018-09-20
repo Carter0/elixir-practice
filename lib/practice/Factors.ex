@@ -1,6 +1,6 @@
 defmodule Practice.Factor do
 
-  def is-prime(x) do
+  def factor(x) do
     is-prime (x, 2, [])
   end
 
