@@ -18,8 +18,12 @@ defmodule Practice do
 
   def factor(x) do
     # Maybe delegate this too.
-    [1,2,x]
+    Practice.Factor.factor(x)
   end
 
-  # TODO: Add a palindrome? function.
+  @spec palindrome(binary()) :: boolean()
+  def palindrome(x) do
+    #reverse and check to see if its the same as whats passed it.
+    String.reverse(x) == x
+  end
 end
